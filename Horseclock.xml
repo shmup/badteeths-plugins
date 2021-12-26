@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<muclient>
+  <plugin
+    name="HorseClock"
+    author="badteeth"
+    id="deadbeefdeadbeefdeadbeef"
+    language="Lua"
+    purpose="Time tracking for horse routes"
+    date_written="2021-12-21 16:25:14"
+    requires="5.06"
+    version="0.1">
+    <description trim="y">
+      <![CDATA[After the specified interval (default 5 minutes) elapse, sends "afk" to the MUD.]]>
+    </description>
+  </plugin>
+
+  <script>
+  <![CDATA[
+-- /world.ReloadPlugin "HorseClock"
+-- /world.CallPlugin ("deadbeefdeadbeefdeadbeef", "Foo")
+function Foo ()
+  Note "Piss"
+end
+  ]]>
+  </script>
+
+</muclient>
