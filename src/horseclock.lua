@@ -2,7 +2,6 @@
 
 -- when they type something
 function OnPluginCommand (sText)
-  ColourNote ("red", "", sText)
   return true  -- process the command
 end
 

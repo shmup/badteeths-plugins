@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
 <muclient>
-  <plugin id="DEADBEEFDEADBEEFDEADBEEF" date_written="2021-12-27 01:32:48" name="HorseClock" requires="5.06" version="0.1" author="badteeth" purpose="Time tracking for horse runs" language="Lua"/>
-  <triggers/>
   <aliases>
-    <alias group="badteeth" enabled="y" match="hc-help" send_to="12" sequence="100">
+    <alias match="hc-help" send_to="12" group="badteeth" enabled="y" sequence="100">
       <send>ColourNote("white", "blue", "TODO")</send>
      </alias>
     </aliases>
+    <plugin id="DEADBEEFDEADBEEFDEADBEEF" version="0.1" author="badteeth" date_written="2021-12-27 01:35:43" name="HorseClock" requires="5.06" purpose="Time tracking for horse runs" language="Lua"/>
     <script><![CDATA[
 -- /world.CallPlugin ("DEADBEEFDEADBEEFDEADBEEF", "Foo")
 
 -- when they type something
 function OnPluginCommand (sText)
-  ColourNote ("red", "", sText)
   return true  -- process the command
 end
 
@@ -22,4 +20,5 @@ function OnPluginConnect ()
   ColourNote ("salmon", "", "Connected!")
 end
 ]]></script>
+    <triggers/>
    </muclient>
