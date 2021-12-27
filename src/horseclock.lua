@@ -1,6 +1,6 @@
--- /world.ReloadPlugin "HorseClock"
 -- /world.CallPlugin ("DEADBEEFDEADBEEFDEADBEEF", "Foo")
 
-function Foo ()
-  Note "Bar"
+function reload_horseclock()
+  Note "Reloading HorseClock"
+  world.ReloadPlugin "HorseClock"
 end

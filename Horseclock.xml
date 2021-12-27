@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
 <muclient>
-  <plugin version="0.1" name="HorseClock" requires="5.06" purpose="Time tracking for horse runs" date_written="2021-12-26 23:20:24" author="badteeth" id="DEADBEEFDEADBEEFDEADBEEF" language="Lua"/>
+  <plugin name="HorseClock" author="badteeth" version="0.1" id="DEADBEEFDEADBEEFDEADBEEF" requires="5.06" date_written="2021-12-26 23:53:39" language="Lua" purpose="Time tracking for horse runs"/>
+  <triggers/>
   <script><![CDATA[
--- /world.ReloadPlugin "HorseClock"
 -- /world.CallPlugin ("DEADBEEFDEADBEEFDEADBEEF", "Foo")
 
-function Foo ()
-  Note "Bar"
+function reload_horseclock()
+  Note "Reloading HorseClock"
+  world.ReloadPlugin "HorseClock"
 end
 ]]></script>
- </muclient>
+  <aliases>
+    <alias script="reload_horseclock" sequence="100" match="hc-reload" enabled="y"/>
+   </aliases>
+  </muclient>

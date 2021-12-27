@@ -10,6 +10,14 @@ local header = [[
 
 --[[ HorseClock ]]--
 local clock_src = utils.read_file("src/horseclock.lua");
+local triggers = {}
+local aliases = {}
+aliases[0] = { alias = {
+  match="hc-reload",
+  enabled="y",
+  sequence="100",
+  script="reload_horseclock",
+}}
 local HorseClock = {
   muclient = {
     plugin = {
@@ -22,6 +30,8 @@ local HorseClock = {
       requires = "5.06",
       version = "0.1"
     },
+    triggers = triggers,
+    aliases = aliases,
     script = {"<![CDATA[\n" .. clock_src .. "]]>"}
   }
 }
