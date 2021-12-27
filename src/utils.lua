@@ -1,5 +1,14 @@
 local M = {}
 
+function M.create_alias(match, fn, seq)
+  return { alias = {
+    match=match,
+    enabled="y",
+    sequence=seq or 100,
+    script=fn
+  }}
+end
+
 function M.write_file(path, junk)
   local file = io.open(path, "w") -- read/binary mode
   file:write(junk)

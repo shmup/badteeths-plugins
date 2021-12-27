@@ -3,21 +3,12 @@
 local utils = require("src/utils")
 local timestamp = os.date("%Y-%m-%d %X")
 
-local header = [[
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE muclient>
-]]
-
 --[[ HorseClock ]]--
-local clock_src = utils.read_file("src/horseclock.lua");
 local triggers = {}
-local aliases = {}
-aliases[0] = { alias = {
-  match="hc-reload",
-  enabled="y",
-  sequence="100",
-  script="reload_horseclock",
-}}
+local aliases = {
+  [0] = utils.create_alias("hc-reload", "reload_horseclock")
+}
+local clock_src = utils.read_file("src/horseclock.lua");
 local HorseClock = {
   muclient = {
     plugin = {
@@ -35,4 +26,9 @@ local HorseClock = {
     script = {"<![CDATA[\n" .. clock_src .. "]]>"}
   }
 }
+local header = [[
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+]]
+
 utils.write_file("HorseClock.xml", header .. utils.lua_to_xml(HorseClock))
