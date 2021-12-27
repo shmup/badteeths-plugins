@@ -4,7 +4,7 @@ help:
 	@cat Makefile
 
 build:
-	lua builder.lua > Horseclock.xml
+	lua builder.lua
 	@cat Horseclock.xml
 
 clean:

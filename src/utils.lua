@@ -1,5 +1,12 @@
 local M = {}
 
+function M.write_file(path, junk)
+  local file = io.open(path, "w") -- read/binary mode
+  file:write(junk)
+  file:close()
+  return content
+end
+
 function M.read_file(path)
   local file = io.open(path, "rb") -- read/binary mode
   local content = file:read "*a" -- *a or *all reads the whole file

@@ -8,9 +8,9 @@ local header = [[
 <!DOCTYPE muclient>
 ]]
 
+--[[ HorseClock ]]--
 local clock_src = utils.read_file("src/horseclock.lua");
-
-local xml = utils.lua_to_xml({
+local HorseClock = {
   muclient = {
     plugin = {
       name = "HorseClock",
@@ -22,8 +22,7 @@ local xml = utils.lua_to_xml({
       requires = "5.06",
       version = "0.1"
     },
-    script = {"<![CDATA[\n" .. clock_src .. "\n]]>"}
+    script = {"<![CDATA[\n" .. clock_src .. "]]>"}
   }
-})
-
-print(header .. xml)
+}
+utils.write_file("HorseClock.xml", header .. utils.lua_to_xml(HorseClock))
