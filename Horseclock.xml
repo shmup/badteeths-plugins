@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
 <muclient>
+  <plugin date_written="2021-12-26 22:11:18" id="DEADBEEFDEADBEEFDEADBEEF" name="HorseClock" version="0.1" requires="5.06" author="badteeth" purpose="Time tracking for horse runs" language="Lua"/>
   <script><![CDATA[
 -- /world.ReloadPlugin "HorseClock"
 -- /world.CallPlugin ("DEADBEEFDEADBEEFDEADBEEF", "Foo")
@@ -10,6 +11,5 @@ function Foo ()
 end
 
 ]]></script>
-  <plugin id="DEADBEEFDEADBEEFDEADBEEF" language="Lua" author="badteeth" version="0.1" name="HorseClock" requires="5.06" purpose="Time tracking for horse runs" date_written="2021-12-26 21:49:45"/>
  </muclient>
 
