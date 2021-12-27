@@ -1,12 +1,19 @@
 local M = {}
 
-function M.create_alias(match, fn, seq)
-  return { alias = {
-    match=match,
+-- https://www.gammon.com.au/scripts/doc.php?function=GetAliasOption
+function M.create_alias(t)
+  local alias = {
+    match=t.match,
     enabled="y",
-    sequence=seq or 100,
-    script=fn
-  }}
+    group="badteeth",
+    send_to="12",
+    sequence=t.seq or 100,
+  }
+
+  if t.fn then alias.script = fn end
+  if t.send then alias.send = { t.send } end
+
+  return { alias = alias }
 end
 
 function M.write_file(path, junk)

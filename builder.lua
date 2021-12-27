@@ -6,7 +6,10 @@ local timestamp = os.date("%Y-%m-%d %X")
 --[[ HorseClock ]]--
 local triggers = {}
 local aliases = {
-  [0] = utils.create_alias("hc-reload", "reload_horseclock")
+  [0] = utils.create_alias{
+    match="hc-help",
+    send=[[ColourNote("white", "blue", "TODO")]]
+  }
 }
 local clock_src = utils.read_file("src/horseclock.lua");
 local HorseClock = {

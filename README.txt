@@ -3,8 +3,9 @@ badteeth's plugins for mushclient
 
 TODO
   [x] - build a minimal plugin (make build)
-  [ ] - support alias/triggers
+  [x] - support alias/triggers
   [ ] - add timer example
-  [ ] - test
+  [ ] - move plugin pertinent bits into single file
+  [ ] - tests?
 
 
