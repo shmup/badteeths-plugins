@@ -4,11 +4,36 @@ local utils = require("src/utils")
 local timestamp = os.date("%Y-%m-%d %X")
 
 --[[ HorseClock ]]--
-local triggers = {}
+local triggers = {
+  [1] = utils.create_trigger{
+    match="You tell Donk the dun horse to take you to * and he starts off at a trot.",
+    fn="TimerStart"
+  },
+  [2] = utils.create_trigger{
+    match="Donk the dun horse slows to a stop*",
+    fn="TimerStop"
+  },
+  [3] = utils.create_trigger{
+    match="You mess up the rhythm of your riding*",
+    fn="TimerStop"
+  },
+  [4] = utils.create_trigger{
+    match="Donk the dun horse stops walking",
+    fn="TimerStop"
+  },
+}
 local aliases = {
-  [0] = utils.create_alias{
+  [1] = utils.create_alias{
     match="hc-help",
     send=[[ColourNote("white", "blue", "TODO")]]
+  },
+  [2] = utils.create_alias{
+    match="hc-start",
+    fn="TimerStart"
+  },
+  [3] = utils.create_alias{
+    match="hc-stop",
+    fn="TimerStop"
   }
 }
 local clock_src = utils.read_file("src/horseclock.lua");

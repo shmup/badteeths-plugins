@@ -10,10 +10,25 @@ function M.create_alias(t)
     sequence=t.seq or 100,
   }
 
-  if t.fn then alias.script = fn end
+  if t.fn then alias.script = t.fn end
   if t.send then alias.send = { t.send } end
 
   return { alias = alias }
+end
+
+function M.create_trigger(t)
+  local trigger = {
+    match=t.match,
+    enabled="y",
+    group="badteeth",
+    send_to="12",
+    sequence=t.seq or 100,
+  }
+
+  if t.fn then trigger.script = t.fn end
+  if t.send then trigger.send = { t.send } end
+
+  return { trigger = trigger }
 end
 
 function M.write_file(path, junk)

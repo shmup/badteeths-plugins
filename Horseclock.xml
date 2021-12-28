@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
 <muclient>
-  <aliases>
-    <alias match="hc-help" send_to="12" group="badteeth" enabled="y" sequence="100">
-      <send>ColourNote("white", "blue", "TODO")</send>
-     </alias>
-    </aliases>
-    <plugin id="DEADBEEFDEADBEEFDEADBEEF" version="0.1" author="badteeth" date_written="2021-12-27 01:35:43" name="HorseClock" requires="5.06" purpose="Time tracking for horse runs" language="Lua"/>
-    <script><![CDATA[
+  <triggers>
+    <trigger script="TimerStart" send_to="12" sequence="100" group="badteeth" match="You tell Donk the dun horse to take you to * and he starts off at a trot." enabled="y"/>
+    <trigger script="TimerStop" send_to="12" sequence="100" group="badteeth" match="Donk the dun horse slows to a stop*" enabled="y"/>
+    <trigger script="TimerStop" send_to="12" sequence="100" group="badteeth" match="You mess up the rhythm of your riding*" enabled="y"/>
+    <trigger script="TimerStop" send_to="12" sequence="100" group="badteeth" match="Donk the dun horse stops walking" enabled="y"/>
+   </triggers>
+   <script><![CDATA[
 -- /world.CallPlugin ("DEADBEEFDEADBEEFDEADBEEF", "Foo")
 
 -- when they type something
@@ -19,6 +19,28 @@ end
 function OnPluginConnect ()
   ColourNote ("salmon", "", "Connected!")
 end
+
+local cache = {}
+
+function TimerStart(name, line, wc)
+  cache.start = utils.timer()
+  cache.destination = wc[1] or '??'
+
+  ColourNote("white", "blue", "Off to " .. cache.destination)
+end
+
+function TimerStop(name, line, wc)
+  cache.stop = utils.timer()
+  cache.diff = string.format("%.2f", cache.stop - cache.start)
+  ColourNote("white", "blue", "Arrived at " .. cache.destination .. " after " .. cache.diff .. " seconds")
+end
 ]]></script>
-    <triggers/>
-   </muclient>
+   <aliases>
+     <alias send_to="12" sequence="100" group="badteeth" match="hc-help" enabled="y">
+       <send>ColourNote("white", "blue", "TODO")</send>
+      </alias>
+      <alias script="TimerStart" send_to="12" sequence="100" group="badteeth" match="hc-start" enabled="y"/>
+      <alias script="TimerStop" send_to="12" sequence="100" group="badteeth" match="hc-stop" enabled="y"/>
+     </aliases>
+     <plugin id="DEADBEEFDEADBEEFDEADBEEF" version="0.1" date_written="2021-12-28 01:23:09" author="badteeth" name="HorseClock" requires="5.06" purpose="Time tracking for horse runs" language="Lua"/>
+    </muclient>
