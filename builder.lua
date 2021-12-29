@@ -22,10 +22,14 @@ local triggers = {
     fn="TimerStop"
   },
 }
+
 local aliases = {
   [1] = utils.create_alias{
     match="hc-help",
-    send=[[ColourNote("white", "blue", "TODO")]]
+    send=[[
+      ColourNote("white", "blue", "HorseClock tries to run/stop when the route starts/stops.")
+      ColourNote("white", "blue", "Manually run it with hc-start and hc-stop.")
+    ]]
   },
   [2] = utils.create_alias{
     match="hc-start",

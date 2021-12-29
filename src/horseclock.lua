@@ -14,13 +14,20 @@ local cache = {}
 
 function TimerStart(name, line, wc)
   cache.start = utils.timer()
-  cache.destination = wc[1] or '??'
+  cache.destination = wc[1] or "somewhere"
 
-  ColourNote("white", "blue", "Off to " .. cache.destination)
+  ColourNote("white", "blue", "Off to " .. cache.destination .. "!")
 end
 
 function TimerStop(name, line, wc)
   cache.stop = utils.timer()
   cache.diff = string.format("%.2f", cache.stop - cache.start)
-  ColourNote("white", "blue", "Arrived at " .. cache.destination .. " after " .. cache.diff .. " seconds")
+
+  local msg = "Arrived at " .. cache.destination .. " after " .. cache.diff .. " seconds"
+
+  if string.find(line, "mess up the rhythm") then
+    msg = "Oops, you lasted " .. cache.diff .. " seconds"
+  end
+
+  ColourNote("white", "blue", msg)
 end
