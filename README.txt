@@ -1,33 +1,11 @@
 badteeth's plugins for mushclient
+~*~*~*~*~*~*~*
+This thing basically converts a lua table to xml, structurally matching a valid plugin
 
-----
-Current dev workflow is like:
+Peep builder.lua for an easy understanding of concepts
 
-1) Run `make build` to generate my plugins.xml
-2) Use an alias separate from plugins to reload, seen below
+Peep aliases.lua to see how you might dynamically create aliases
+~*~*~*~*~*~*~*
+A slow work in progress, not really sure what direction it'll go in
 
-----
-Paste this into aliases for convenience sake:
-
-  <aliases>
-    <alias
-     match="hc-reload"
-     enabled="y"
-     group="dev"
-     send_to="12"
-     sequence="100"
-    >
-    <send>ReloadPlugin("HorseClock")</send>
-    </alias>
-  </aliases>
-
-----
-TODO
-
-[x] - build a minimal plugin (make build)
-[x] - support alias/triggers
-[ ] - add timer example
-[ ] - move plugin pertinent bits into single file
-[ ] - tests?
-
-
+\@

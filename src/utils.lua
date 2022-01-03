@@ -16,12 +16,7 @@ function M.generate_plugin(t)
     purpose = t.purpose or "TODO",
     date_written = timestamp,
     requires = t.requires or "5.06",
-    version = t.version or "0.1",
-    match=t.match,
-    enabled="y",
-    group="badteeth",
-    send_to=t.send_to or M.Types.CMD,
-    sequence=t.seq or 100,
+    version = t.version or "0.1"
   }
 
   muclient.plugin = plugin

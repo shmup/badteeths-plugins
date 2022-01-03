@@ -1,8 +1,8 @@
 local utils = require("src/utils")
 local alias = utils.create_alias
 
+-- Speedwalking aliases
 local dirs = {'n','e','s','w','nw','ne','sw','se'}
-
 local A = {}
 local send_dir = ""
 

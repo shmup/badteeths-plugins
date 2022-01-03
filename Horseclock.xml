@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
-<plugin send_to="12" group="badteeth" requires="5.06" name="HorseClock" enabled="y" id="DEADBEEFDEADBEEFDEADBEEF" sequence="100" version="0.1" language="Lua" purpose="Time tracking for horse runs" date_written="2022-01-03 17:36:35" author="badteeth"/>
 <triggers>
- <trigger send_to="12" match="You tell Donk the dun horse to take you to * and he starts off at a trot." enabled="y" group="badteeth" sequence="100" script="TimerStart"/>
- <trigger send_to="12" match="Donk the dun horse slows to a stop*" enabled="y" group="badteeth" sequence="100" script="TimerStop"/>
- <trigger send_to="12" match="You mess up the rhythm of your riding*" enabled="y" group="badteeth" sequence="100" script="TimerStop"/>
- <trigger send_to="12" match="Donk the dun horse stops walking" enabled="y" group="badteeth" sequence="100" script="TimerStop"/>
+ <trigger script="TimerStart" match="You tell Donk the dun horse to take you to * and he starts off at a trot." enabled="y" sequence="100" send_to="12" group="badteeth"/>
+ <trigger script="TimerStop" match="Donk the dun horse slows to a stop*" enabled="y" sequence="100" send_to="12" group="badteeth"/>
+ <trigger script="TimerStop" match="You mess up the rhythm of your riding*" enabled="y" sequence="100" send_to="12" group="badteeth"/>
+ <trigger script="TimerStop" match="Donk the dun horse stops walking" enabled="y" sequence="100" send_to="12" group="badteeth"/>
 </triggers>
-<aliases>
- <alias send_to="12" match="hc-help" enabled="y" group="badteeth" sequence="100">
-  <send>      ColourNote("white", "blue", "HorseClock tries to run/stop when the route starts/stops.")
-      ColourNote("white", "blue", "Manually run it with hc-start and hc-stop.")
-    </send>
- </alias>
- <alias send_to="12" match="hc-start" enabled="y" group="badteeth" sequence="100" script="TimerStart"/>
- <alias send_to="12" match="hc-stop" enabled="y" group="badteeth" sequence="100" script="TimerStop"/>
-</aliases>
+<plugin id="DEADBEEFDEADBEEFDEADBEEF" date_written="2022-01-03 18:35:51" name="HorseClock" requires="5.06" version="0.1" language="Lua" purpose="Time tracking for horse runs" author="badteeth"/>
 <script><![CDATA[
 -- /world.CallPlugin ("DEADBEEFDEADBEEFDEADBEEF", "Foo")
 
@@ -51,3 +42,12 @@ function TimerStop(name, line, wc)
   ColourNote("white", "blue", msg)
 end
 ]]></script>
+<aliases>
+ <alias match="hc-help" enabled="y" sequence="100" send_to="12" group="badteeth">
+  <send>      ColourNote("white", "blue", "HorseClock tries to run/stop when the route starts/stops.")
+      ColourNote("white", "blue", "Manually run it with hc-start and hc-stop.")
+    </send>
+ </alias>
+ <alias script="TimerStart" match="hc-start" enabled="y" sequence="100" send_to="12" group="badteeth"/>
+ <alias script="TimerStop" match="hc-stop" enabled="y" sequence="100" send_to="12" group="badteeth"/>
+</aliases>
