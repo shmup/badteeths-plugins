@@ -13,7 +13,7 @@ end
 local cache = {}
 
 function TimerStart(name, line, wc)
-  cache.start = utils.timer()
+  cache.start = utils.timer() -- utils is a global
   cache.destination = wc[1] or "somewhere"
 
   ColourNote("white", "blue", "Off to " .. cache.destination .. "!")

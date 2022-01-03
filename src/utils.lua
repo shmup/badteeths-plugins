@@ -1,12 +1,24 @@
 local M = {}
 
+M.Types = {
+  CMD = "12",
+  SW = "11"
+}
+
+function M.TableConcat(t1,t2)
+  for i=1,#t2 do
+    t1[#t1+1] = t2[i]
+  end
+  return t1
+end
+
 -- https://www.gammon.com.au/scripts/doc.php?function=GetAliasOption
 function M.create_alias(t)
   local alias = {
     match=t.match,
     enabled="y",
     group="badteeth",
-    send_to="12",
+    send_to=t.send_to or M.Types.CMD,
     sequence=t.seq or 100,
   }
 
@@ -21,7 +33,7 @@ function M.create_trigger(t)
     match=t.match,
     enabled="y",
     group="badteeth",
-    send_to="12",
+    send_to=t.send_to or M.Types.CMD,
     sequence=t.seq or 100,
   }
 
@@ -84,7 +96,7 @@ function M.lua_to_xml(value)
 
           if next(children) ~= nil or #number_strings > 1 then
             xml = xml .. ">\n"
-            indentation = indentation .. "  "
+            indentation = indentation .. " "
             xml = xml .. M.lua_to_xml(children)
             xml = xml .. M.lua_to_xml(number_strings)
             indentation = indentation:sub(1,#indentation-1)

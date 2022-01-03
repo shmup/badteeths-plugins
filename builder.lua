@@ -1,6 +1,7 @@
 #!/usr/bin/env lua
 
 local utils = require("src/utils")
+local my_aliases = require("src/aliases")
 local timestamp = os.date("%Y-%m-%d %X")
 
 --[[ HorseClock ]]--
@@ -23,23 +24,24 @@ local triggers = {
   },
 }
 
-local aliases = {
-  [1] = utils.create_alias{
+local hc_aliases = {
+  utils.create_alias{
     match="hc-help",
     send=[[
       ColourNote("white", "blue", "HorseClock tries to run/stop when the route starts/stops.")
       ColourNote("white", "blue", "Manually run it with hc-start and hc-stop.")
     ]]
   },
-  [2] = utils.create_alias{
+  utils.create_alias{
     match="hc-start",
     fn="TimerStart"
   },
-  [3] = utils.create_alias{
+  utils.create_alias{
     match="hc-stop",
     fn="TimerStop"
   }
 }
+local aliases = utils.TableConcat(my_aliases, hc_aliases)
 local clock_src = utils.read_file("src/horseclock.lua");
 local HorseClock = {
   muclient = {
