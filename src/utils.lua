@@ -5,6 +5,36 @@ M.Types = {
   SW = "11"
 }
 
+function M.generate_plugin(t)
+  local timestamp = os.date("%Y-%m-%d %X")
+  local muclient = {}
+  local plugin = {
+    name = t.name or  "HorseClock",
+    author = "badteeth",
+    id = t.id or "DEADBEEFDEADBEEFDEADBEEF",
+    language = t.language or "Lua",
+    purpose = t.purpose or "TODO",
+    date_written = timestamp,
+    requires = t.requires or "5.06",
+    version = t.version or "0.1",
+    match=t.match,
+    enabled="y",
+    group="badteeth",
+    send_to=t.send_to or M.Types.CMD,
+    sequence=t.seq or 100,
+  }
+
+  muclient.plugin = plugin
+
+  if t.triggers then muclient.triggers = t.triggers end
+  if t.aliases then muclient.aliases = t.aliases end
+  if t.script then
+    muclient.script = {"<![CDATA[\n" .. t.script .. "]]>"}
+  end
+
+  return { muclient }
+end
+
 function M.TableConcat(t1,t2)
   for i=1,#t2 do
     t1[#t1+1] = t2[i]
@@ -47,7 +77,6 @@ function M.write_file(path, junk)
   local file = assert(io.open(path, "w")) -- read/binary mode
   file:write(junk)
   file:close()
-  return content
 end
 
 function M.read_file(path)

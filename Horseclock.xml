@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
-<muclient>
- <plugin requires="5.06" purpose="Time tracking for horse runs" version="0.1" date_written="2022-01-03 03:19:57" author="badteeth" id="DEADBEEFDEADBEEFDEADBEEF" name="HorseClock" language="Lua"/>
- <script><![CDATA[
+<plugin send_to="12" group="badteeth" requires="5.06" name="HorseClock" enabled="y" id="DEADBEEFDEADBEEFDEADBEEF" sequence="100" version="0.1" language="Lua" purpose="Time tracking for horse runs" date_written="2022-01-03 17:36:35" author="badteeth"/>
+<triggers>
+ <trigger send_to="12" match="You tell Donk the dun horse to take you to * and he starts off at a trot." enabled="y" group="badteeth" sequence="100" script="TimerStart"/>
+ <trigger send_to="12" match="Donk the dun horse slows to a stop*" enabled="y" group="badteeth" sequence="100" script="TimerStop"/>
+ <trigger send_to="12" match="You mess up the rhythm of your riding*" enabled="y" group="badteeth" sequence="100" script="TimerStop"/>
+ <trigger send_to="12" match="Donk the dun horse stops walking" enabled="y" group="badteeth" sequence="100" script="TimerStop"/>
+</triggers>
+<aliases>
+ <alias send_to="12" match="hc-help" enabled="y" group="badteeth" sequence="100">
+  <send>      ColourNote("white", "blue", "HorseClock tries to run/stop when the route starts/stops.")
+      ColourNote("white", "blue", "Manually run it with hc-start and hc-stop.")
+    </send>
+ </alias>
+ <alias send_to="12" match="hc-start" enabled="y" group="badteeth" sequence="100" script="TimerStart"/>
+ <alias send_to="12" match="hc-stop" enabled="y" group="badteeth" sequence="100" script="TimerStop"/>
+</aliases>
+<script><![CDATA[
 -- /world.CallPlugin ("DEADBEEFDEADBEEFDEADBEEF", "Foo")
 
 -- when they type something
@@ -37,163 +51,3 @@ function TimerStop(name, line, wc)
   ColourNote("white", "blue", msg)
 end
 ]]></script>
- <triggers>
-  <trigger enabled="y" group="badteeth" sequence="100" match="You tell Donk the dun horse to take you to * and he starts off at a trot." send_to="12" script="TimerStart"/>
-  <trigger enabled="y" group="badteeth" sequence="100" match="Donk the dun horse slows to a stop*" send_to="12" script="TimerStop"/>
-  <trigger enabled="y" group="badteeth" sequence="100" match="You mess up the rhythm of your riding*" send_to="12" script="TimerStop"/>
-  <trigger enabled="y" group="badteeth" sequence="100" match="Donk the dun horse stops walking" send_to="12" script="TimerStop"/>
- </triggers>
- <aliases>
-  <alias enabled="y" group="badteeth" sequence="100" match="2n" send_to="11">
-   <send>2n</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="2e" send_to="11">
-   <send>2e</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="2s" send_to="11">
-   <send>2s</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="2w" send_to="11">
-   <send>2w</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="2nw" send_to="11">
-   <send>2(nw)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="2ne" send_to="11">
-   <send>2(ne)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="2sw" send_to="11">
-   <send>2(sw)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="2se" send_to="11">
-   <send>2(se)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="3n" send_to="11">
-   <send>3n</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="3e" send_to="11">
-   <send>3e</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="3s" send_to="11">
-   <send>3s</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="3w" send_to="11">
-   <send>3w</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="3nw" send_to="11">
-   <send>3(nw)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="3ne" send_to="11">
-   <send>3(ne)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="3sw" send_to="11">
-   <send>3(sw)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="3se" send_to="11">
-   <send>3(se)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="4n" send_to="11">
-   <send>4n</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="4e" send_to="11">
-   <send>4e</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="4s" send_to="11">
-   <send>4s</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="4w" send_to="11">
-   <send>4w</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="4nw" send_to="11">
-   <send>4(nw)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="4ne" send_to="11">
-   <send>4(ne)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="4sw" send_to="11">
-   <send>4(sw)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="4se" send_to="11">
-   <send>4(se)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="5n" send_to="11">
-   <send>5n</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="5e" send_to="11">
-   <send>5e</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="5s" send_to="11">
-   <send>5s</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="5w" send_to="11">
-   <send>5w</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="5nw" send_to="11">
-   <send>5(nw)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="5ne" send_to="11">
-   <send>5(ne)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="5sw" send_to="11">
-   <send>5(sw)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="5se" send_to="11">
-   <send>5(se)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="6n" send_to="11">
-   <send>6n</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="6e" send_to="11">
-   <send>6e</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="6s" send_to="11">
-   <send>6s</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="6w" send_to="11">
-   <send>6w</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="6nw" send_to="11">
-   <send>6(nw)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="6ne" send_to="11">
-   <send>6(ne)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="6sw" send_to="11">
-   <send>6(sw)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="6se" send_to="11">
-   <send>6(se)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="7n" send_to="11">
-   <send>7n</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="7e" send_to="11">
-   <send>7e</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="7s" send_to="11">
-   <send>7s</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="7w" send_to="11">
-   <send>7w</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="7nw" send_to="11">
-   <send>7(nw)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="7ne" send_to="11">
-   <send>7(ne)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="7sw" send_to="11">
-   <send>7(sw)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="7se" send_to="11">
-   <send>7(se)</send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="hc-help" send_to="12">
-   <send>      ColourNote("white", "blue", "HorseClock tries to run/stop when the route starts/stops.")
-      ColourNote("white", "blue", "Manually run it with hc-start and hc-stop.")
-    </send>
-  </alias>
-  <alias enabled="y" group="badteeth" sequence="100" match="hc-start" send_to="12" script="TimerStart"/>
-  <alias enabled="y" group="badteeth" sequence="100" match="hc-stop" send_to="12" script="TimerStop"/>
- </aliases>
-</muclient>

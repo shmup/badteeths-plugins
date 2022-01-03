@@ -1,33 +1,45 @@
--- /world.CallPlugin ("DEADBEEFDEADBEEFDEADBEEF", "Foo")
+local utils = require("src/utils")
 
--- when they type something
-function OnPluginCommand (sText)
-  return true  -- process the command
-end
+local HC = {}
 
--- when you connect to the MUD, presumably you are not AFK
-function OnPluginConnect ()
-  ColourNote ("salmon", "", "Connected!")
-end
+--[[ HorseClock ]]--
+HC.triggers = {
+  [1] = utils.create_trigger{
+    match="You tell Donk the dun horse to take you to * and he starts off at a trot.",
+    fn="TimerStart"
+  },
+  [2] = utils.create_trigger{
+    match="Donk the dun horse slows to a stop*",
+    fn="TimerStop"
+  },
+  [3] = utils.create_trigger{
+    match="You mess up the rhythm of your riding*",
+    fn="TimerStop"
+  },
+  [4] = utils.create_trigger{
+    match="Donk the dun horse stops walking",
+    fn="TimerStop"
+  },
+}
 
-local cache = {}
+HC.aliases = {
+  utils.create_alias{
+    match="hc-help",
+    send=[[
+      ColourNote("white", "blue", "HorseClock tries to run/stop when the route starts/stops.")
+      ColourNote("white", "blue", "Manually run it with hc-start and hc-stop.")
+    ]]
+  },
+  utils.create_alias{
+    match="hc-start",
+    fn="TimerStart"
+  },
+  utils.create_alias{
+    match="hc-stop",
+    fn="TimerStop"
+  }
+}
 
-function TimerStart(name, line, wc)
-  cache.start = utils.timer() -- utils is a global
-  cache.destination = wc[1] or "somewhere"
+HC.script = utils.read_file("src/horseclock_script.lua");
 
-  ColourNote("white", "blue", "Off to " .. cache.destination .. "!")
-end
-
-function TimerStop(name, line, wc)
-  cache.stop = utils.timer()
-  cache.diff = string.format("%.2f", cache.stop - cache.start)
-
-  local msg = "Arrived at " .. cache.destination .. " after " .. cache.diff .. " seconds"
-
-  if string.find(line, "mess up the rhythm") then
-    msg = "Oops, you lasted " .. cache.diff .. " seconds"
-  end
-
-  ColourNote("white", "blue", msg)
-end
+return HC
