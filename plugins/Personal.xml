@@ -1,149 +1,149 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
 <aliases>
- <alias match="2n" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="2n" group="badteeth" send_to="11">
   <send>2n</send>
  </alias>
- <alias match="2e" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="2e" group="badteeth" send_to="11">
   <send>2e</send>
  </alias>
- <alias match="2s" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="2s" group="badteeth" send_to="11">
   <send>2s</send>
  </alias>
- <alias match="2w" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="2w" group="badteeth" send_to="11">
   <send>2w</send>
  </alias>
- <alias match="2nw" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="2nw" group="badteeth" send_to="11">
   <send>2(nw)</send>
  </alias>
- <alias match="2ne" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="2ne" group="badteeth" send_to="11">
   <send>2(ne)</send>
  </alias>
- <alias match="2sw" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="2sw" group="badteeth" send_to="11">
   <send>2(sw)</send>
  </alias>
- <alias match="2se" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="2se" group="badteeth" send_to="11">
   <send>2(se)</send>
  </alias>
- <alias match="3n" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="3n" group="badteeth" send_to="11">
   <send>3n</send>
  </alias>
- <alias match="3e" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="3e" group="badteeth" send_to="11">
   <send>3e</send>
  </alias>
- <alias match="3s" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="3s" group="badteeth" send_to="11">
   <send>3s</send>
  </alias>
- <alias match="3w" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="3w" group="badteeth" send_to="11">
   <send>3w</send>
  </alias>
- <alias match="3nw" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="3nw" group="badteeth" send_to="11">
   <send>3(nw)</send>
  </alias>
- <alias match="3ne" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="3ne" group="badteeth" send_to="11">
   <send>3(ne)</send>
  </alias>
- <alias match="3sw" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="3sw" group="badteeth" send_to="11">
   <send>3(sw)</send>
  </alias>
- <alias match="3se" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="3se" group="badteeth" send_to="11">
   <send>3(se)</send>
  </alias>
- <alias match="4n" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="4n" group="badteeth" send_to="11">
   <send>4n</send>
  </alias>
- <alias match="4e" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="4e" group="badteeth" send_to="11">
   <send>4e</send>
  </alias>
- <alias match="4s" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="4s" group="badteeth" send_to="11">
   <send>4s</send>
  </alias>
- <alias match="4w" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="4w" group="badteeth" send_to="11">
   <send>4w</send>
  </alias>
- <alias match="4nw" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="4nw" group="badteeth" send_to="11">
   <send>4(nw)</send>
  </alias>
- <alias match="4ne" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="4ne" group="badteeth" send_to="11">
   <send>4(ne)</send>
  </alias>
- <alias match="4sw" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="4sw" group="badteeth" send_to="11">
   <send>4(sw)</send>
  </alias>
- <alias match="4se" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="4se" group="badteeth" send_to="11">
   <send>4(se)</send>
  </alias>
- <alias match="5n" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="5n" group="badteeth" send_to="11">
   <send>5n</send>
  </alias>
- <alias match="5e" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="5e" group="badteeth" send_to="11">
   <send>5e</send>
  </alias>
- <alias match="5s" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="5s" group="badteeth" send_to="11">
   <send>5s</send>
  </alias>
- <alias match="5w" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="5w" group="badteeth" send_to="11">
   <send>5w</send>
  </alias>
- <alias match="5nw" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="5nw" group="badteeth" send_to="11">
   <send>5(nw)</send>
  </alias>
- <alias match="5ne" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="5ne" group="badteeth" send_to="11">
   <send>5(ne)</send>
  </alias>
- <alias match="5sw" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="5sw" group="badteeth" send_to="11">
   <send>5(sw)</send>
  </alias>
- <alias match="5se" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="5se" group="badteeth" send_to="11">
   <send>5(se)</send>
  </alias>
- <alias match="6n" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="6n" group="badteeth" send_to="11">
   <send>6n</send>
  </alias>
- <alias match="6e" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="6e" group="badteeth" send_to="11">
   <send>6e</send>
  </alias>
- <alias match="6s" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="6s" group="badteeth" send_to="11">
   <send>6s</send>
  </alias>
- <alias match="6w" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="6w" group="badteeth" send_to="11">
   <send>6w</send>
  </alias>
- <alias match="6nw" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="6nw" group="badteeth" send_to="11">
   <send>6(nw)</send>
  </alias>
- <alias match="6ne" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="6ne" group="badteeth" send_to="11">
   <send>6(ne)</send>
  </alias>
- <alias match="6sw" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="6sw" group="badteeth" send_to="11">
   <send>6(sw)</send>
  </alias>
- <alias match="6se" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="6se" group="badteeth" send_to="11">
   <send>6(se)</send>
  </alias>
- <alias match="7n" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="7n" group="badteeth" send_to="11">
   <send>7n</send>
  </alias>
- <alias match="7e" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="7e" group="badteeth" send_to="11">
   <send>7e</send>
  </alias>
- <alias match="7s" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="7s" group="badteeth" send_to="11">
   <send>7s</send>
  </alias>
- <alias match="7w" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="7w" group="badteeth" send_to="11">
   <send>7w</send>
  </alias>
- <alias match="7nw" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="7nw" group="badteeth" send_to="11">
   <send>7(nw)</send>
  </alias>
- <alias match="7ne" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="7ne" group="badteeth" send_to="11">
   <send>7(ne)</send>
  </alias>
- <alias match="7sw" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="7sw" group="badteeth" send_to="11">
   <send>7(sw)</send>
  </alias>
- <alias match="7se" enabled="y" sequence="100" send_to="11" group="badteeth">
+ <alias enabled="y" sequence="100" match="7se" group="badteeth" send_to="11">
   <send>7(se)</send>
  </alias>
 </aliases>
-<plugin id="DEADBEEFDEADBEEFDEADDEAD" date_written="2022-01-03 18:35:51" name="Personal" requires="5.06" version="0.1" language="Lua" purpose="Personal Stuff" author="badteeth"/>
+<plugin date_written="2022-01-03 18:42:46" version="0.1" author="badteeth" name="Personal" language="Lua" requires="5.06" purpose="Personal Stuff" id="DEADBEEFDEADBEEFDEADDEAD"/>

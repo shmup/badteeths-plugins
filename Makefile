@@ -5,9 +5,8 @@ help:
 
 build:
 	lua builder.lua
-	@cat Horseclock.xml
 
 clean:
-	rm Horseclock.xml
+	rm plugins/*xml
 
 
