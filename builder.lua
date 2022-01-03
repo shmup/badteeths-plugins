@@ -32,5 +32,5 @@ local header = [[
 <!DOCTYPE muclient>
 ]]
 
-utils.write_file("HorseClock.xml", header .. utils.lua_to_xml(HorseClock))
-utils.write_file("Personal.xml", header .. utils.lua_to_xml(Personal))
+utils.write_file("plugins/HorseClock.xml", header .. utils.lua_to_xml(HorseClock))
+utils.write_file("plugins/Personal.xml", header .. utils.lua_to_xml(Personal))
